@@ -1,0 +1,13 @@
+﻿@model Category
+<form method="post" runat="server">
+    <label asp-for="CategoryId"></label>
+    <div>
+        @Model.CategoryId
+    </div>
+    <label asp-for="CategoryName"></label>
+    <div>
+        @Model.CategoryName
+    </div>
+    <button class="btn btn-primary" type="submit">Delete</button>
+    <a class="text-decoration-none" asp-controller="Category" asp-action="Read">Back To List</a>
+</form>

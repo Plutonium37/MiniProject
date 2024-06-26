@@ -1,0 +1,26 @@
+﻿@model Category
+<div>
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <td class="mx-2">CategoryId</td>
+                <td>CategoryName</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="mx-2">@Model.CategoryId</td>
+                <td>@Model.CategoryName</td>
+                <td class="mx-2">
+                    <a class="btn btn-primary text-decoration-none" asp-controller="Category" asp-action="Edit" asp-route-id="@Model.CategoryId">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary text-decoration-none" asp-controller="Category" asp-action="Delete" asp-route-id="@Model.CategoryId">Delete</a>
+                </td>
+                <td class="mx-2">
+                    <a class="btn btn-primary text-decoration-none" asp-controller="Category" asp-action="Read">Back To List</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

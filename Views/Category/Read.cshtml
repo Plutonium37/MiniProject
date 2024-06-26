@@ -1,0 +1,40 @@
+﻿@model List<Category>
+<div class="row">
+    <div class="col-md-9">
+        <form method="get" asp-controller="Category" asp-action="Search">
+            <input id="Search" type="text" name="Search"/>
+            <button id="Search" class="btn btn-primary" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-outline-primary mx-2">
+            <a asp-controller="Category" asp-action="Create">Create</a>
+        </button>
+    </div>
+</div>
+
+<table class="table-bordered">
+    <thead>
+        <tr>
+
+            <td>CategoryId</td>
+            <td>CategoryName</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td>
+                    <a class="btn btn-primary text-decoration-none" asp-controller="Category" asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary text-decoration-none" asp-controller="Category" asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
